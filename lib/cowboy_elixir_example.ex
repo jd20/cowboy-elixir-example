@@ -49,12 +49,12 @@ defmodule CowboyElixirExample do
           {"/dynamic", DynamicPageHandler, []},
 
           # Serve websocket requests.
-          {"/websocket", WebsocketHandler, []}
+          {"/socket/websocket", WebsocketHandler, []}
       ]}
     ])
     { :ok, _ } = :cowboy.start_http(:http, 
                                     100,
-                                   [{:port, 8080}],  
+                                   [{:port, 4000}],  
                                    [{ :env, [{:dispatch, dispatch}]}]
                                    ) 
 
