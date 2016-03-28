@@ -55,7 +55,7 @@ defmodule CowboyElixirExample do
     { :ok, _ } = :cowboy.start_http(:http, 
                                     100,
                                    [{:port, 4000}, {:backlog, 2048}, {:max_connections, :infinity}],
-                                   [{:env, [{:dispatch, dispatch}]}]
+                                   [{:env, [{:dispatch, dispatch}]}, {:timeout, :infinity}]
                                    ) 
 
     #device = File.open!("dbg.log", [:write])
