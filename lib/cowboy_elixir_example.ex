@@ -53,8 +53,9 @@ defmodule CowboyElixirExample do
       ]}
     ])
     { :ok, _ } = :cowboy.start_http(:http, 
-                                    100,
-                                   [{:port, 4000}],  
+                                    1000,
+                                   [{:port, 4000}],
+                                   [{:backlog, 2048}],
                                    [{ :env, [{:dispatch, dispatch}]}]
                                    ) 
 
